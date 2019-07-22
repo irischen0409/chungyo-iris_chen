@@ -1,0 +1,29 @@
+<script>
+    let year = 2019;
+    document.write(year);
+    if(year % 4 == 0){
+        if (year % 100 == 0){
+            if (year % 400 == 0){
+                document.write("閏年");
+            }else{
+                document.write("非閏年");
+            }
+        }else{
+            document.write("閏年");
+        }
+    }else{
+        document.write("非閏年");
+    }
+    
+</script>
+<hr>
+<script>
+    let year1 = 2019;
+    document.write(year1);
+
+    if (year1 % 400 == 0 || (year1 % 4 == 0 && year1 % 100 != 0)){
+        document.write("閏年");
+    }else{
+        document.write("非閏年");
+    }
+</Script>    

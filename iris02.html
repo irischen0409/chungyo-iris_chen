@@ -1,0 +1,30 @@
+<script>
+let var1;  //弱型別沒有強制的問題
+document.write(var1 + ":" + typeof(var1) + "<br>");
+var1 = 123;
+document.write(var1 + ":" + typeof(var1) + "<br>");
+var1 = 12.3;
+document.write(var1 + ":" + typeof(var1) + "<br>");
+var1 = '123';
+document.write(var1 + ":" + typeof(var1) + "<br>");
+var1 = true;
+document.write(var1 + ":" + typeof(var1) + "<hr>"); //typeof 用在全等比較使用,或用來查看型態使用
+
+let a123 = 123;
+document.write(a123 + "<br>");
+
+let $abc = 456; //[a-z A-Z $_][a-z A-Z 0-9 $_]*
+document.write($abc + "<br>");
+
+let _$_ = 666;
+document.write(_$_ + "<hr>");
+
+const name = 'Iris'; //常數必須在宣告時給值,若重複給值會失敗
+document.write("My name is " + name + ".<br>");
+document.write(`My name is ${name}.<br>`); // ` ` 將變數可以順利顯示
+
+let a = 10 , b = 3;
+document.write(`${a} + ${b} = ${a + b}`);
+
+
+</script>

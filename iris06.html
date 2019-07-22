@@ -1,0 +1,27 @@
+<script>
+// 0 - 100   
+// 90+ => A
+// 80+ => B
+// 70+ => C
+// 60+ => D 
+// let score = Math.floor(Math.random()*101); 
+let score = Math.random();
+score = parseInt(score * 101); //101 => 0 ~ 100 有101個數字
+//score1 = parseInt(score1 * 49 + 1); // 樂透 1 ~ 49 號, 因為沒有0,所以要位移+1
+//score2 = parseInt(score2 * 6 + 1); // 擲骰子 1 ~ 6 點, 因為沒0點,所以要位移+1
+//score3 = parseInt(score * 61 - 30); // 取角度
+document.write(score + "<hr>");
+if(score >= 90){
+    document.write("A");
+}else if(score >= 80 ){
+    document.write("B");
+}else if(score >= 70 ){
+    document.write("C");
+}else if(score >= 60){
+    document.write("D");
+}else{
+    document.write("E");  
+}
+
+document.write("<hr>" + score);
+</Script>
