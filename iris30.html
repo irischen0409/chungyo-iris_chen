@@ -1,20 +1,35 @@
 <script src = "irisutils.js"></script>
 <script>
     //sayYaV5('YA!','Iris');
-    let id = 'A123456789';
+    //let id = 'A123456789';
 
-    if (checkTWID(id)){
-        document.write("OK");
-    }else{
-        document.write("XX"); 
+    //if (checkTWID(id)){
+        //document.write("OK");
+    //}else{
+       // document.write("XX"); 
+    //}
+
+    //document.write("<hr>");
+
+    //let number = '0977-123456';
+    //if (phoneid(number)){
+       // document.write("OK");
+    //}else{
+        //document.write("XX"); 
+    //}    
+
+    function checkID(){
+        var mesg = document.getElementById('mesg');
+        let id = document.getElementById('id').value;
+        mesg.innerHTML = checkTWID(id)?'':'ID ERROR!';
     }
-
-    document.write("<hr>");
-
-    let number = '0977-123456';
-    if (phoneid(number)){
-        document.write("OK");
-    }else{
-        document.write("XX"); 
-    }    
 </script>
+<form>
+    Name: <input type ="text" /><br>
+    ID : <input type ="text" onblur="checkID()"  id="id"/>
+    <span id="mesg"></span><br>
+    Gender: <input type ="radio" name = "gender" checked/>Male
+            <input type ="radio" name = "gender" />Female
+
+
+</form>
