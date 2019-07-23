@@ -1,0 +1,19 @@
+<script>
+   let a = 10, b = 3 ,c = 5;
+   //交換
+   //方法一:
+   //let c = a;
+   //a = b;
+   //b = c;
+
+   // 方法二 沒有c的做法:
+   //a = a + b; // 13
+   //b = a - b; // 10
+   //a = a - b; // 3
+
+   //方法三:
+   //[a,b] = [b,a];
+
+   [a,b,c] = [b,c,a];
+   document.write(`a = ${a}; b = ${b}; c = ${c}`);
+</script>

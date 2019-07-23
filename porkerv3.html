@@ -1,0 +1,36 @@
+<script>
+   //52張撲克牌洗牌
+   let poker = [];
+   for (let i = 0; i<52; i++) poker [i] = i;
+   for (let i = poker.length-1; i>0; i--){
+       let rand = parseInt(Math.random() * (i+1));
+       // poker[i] <=> poker[rand] 做交換
+       [poker[i],poker[rand]] = [poker[rand],poker[i]];
+   }
+
+   //for (let i in poker){
+       //document.write(poker[i] + "<br>");
+   //}
+   //document.write("<hr>");
+   let players = [[],[],[],[]];
+   for (let i = 0; i<poker.length; i++){
+       players[i%4].push(poker[i]);
+   }
+   //for (let i in players[0]){
+       //document.write(players[0][i] + "<br>");
+   //}   
+</script>
+<table border="1" width="100%">
+    <script>
+        for (let j in players){
+           document.write("<tr>");
+           for (let i in players[0]){
+               document.write("<td>");  
+               document.write(players[0][i]);
+               document.write("</td>");    
+           }
+           document.write("</tr>");
+        }
+    </script>
+
+</table>
