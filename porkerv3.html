@@ -25,7 +25,7 @@
         let suits = ['&spades;','&hearts;','&diams;','&clubs;'];
         let nums = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K'];
         for (let player of players){ //每一家玩家
-           player.sort(function(a,b){return a-b;}) //排序牌
+           player.sort(function(a,b){return a-b;}) //排序牌,比對function
            document.write("<tr>");
            for (let card of player){  //那一家玩家手上的牌
            if (parseInt(card/13)==1 || parseInt(card/13)==2){
