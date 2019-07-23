@@ -22,11 +22,11 @@
 </script>
 <table border="1" width="100%">
     <script>
-        for (let j in players){
+        for (let player of players){ //每一家玩家
            document.write("<tr>");
-           for (let i in players[0]){
+           for (let card of player){  //那一家玩家手上的牌
                document.write("<td>");  
-               document.write(players[0][i]);
+               document.write(card);
                document.write("</td>");    
            }
            document.write("</tr>");
