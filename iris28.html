@@ -1,0 +1,47 @@
+<script>
+   function sayYa(){
+       document.write("Ya!" + "<br>");
+   }
+   function sayYaV2(name = 'CY'){
+       document.write(`Ya! ${name} <br>`);
+   }
+
+   function sayYaV3(names){
+       if (names instanceof Array){
+           for (let name of names){
+               document.write(`Ya! ${name} <br>`);
+           }
+       }
+   }   
+
+   function sayYaV5(welcome, ...names){
+        for (let name of names){
+            document.write(`${welcome}! ${name} <br>`);
+        }       
+   }
+
+   sayYa();
+   sayYaV2('Iris');
+   sayYaV2();
+   sayYaV3(['Iris','阿囉哈','TONY']);
+   document.write("<hr>");
+   sayYaV5('YA');
+   document.write("<hr>");
+   sayYaV5('YA','test');
+   document.write("<hr>");
+   sayYaV5('HELLO','test','Ivy','Iris','Tom');  
+   document.write("<hr>");
+
+   let fxy = function(x,y){
+       return 2*x + y;
+   }
+
+   document.write(fxy(10,3) + "<br>");
+
+
+   let newfxy = fxy;
+
+   document.write(newfxy(3,4) + "<br>");
+   
+
+</script>
