@@ -27,7 +27,7 @@ function checkTWID(id){  //身分證
         let sum = n1*1 + n2*9 + n3*8 + n4*7 + n5*6 +
                   n6*5 + n7*4 + n8*3 + n9*2 + n10*1 + n11*1;
                   
-        ret = sum % 10 == 0;
+        ret = sum % 10 == 0; //如果等於0 傳TRUE/FALSE
     }
     return ret;
 }
