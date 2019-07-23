@@ -41,7 +41,7 @@ function phoneid(number){  //手機號碼
     return ret;
 }
 
-function createTWID(){ //產生有效的身分證
+function createTWID(){ //產生有效的身分證    
 
 }
 function createTWIDByArea(area){ //產生指定地區有效身分證
@@ -51,6 +51,12 @@ function createTWIDByGender(gender){ //產生指定性別有效身分證
 
 }
 function createTWIDByAll(area, gender){ //產生指定地區&性別有效身分證
-
+    let twid;
+    let letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO'
+    let n12 = letters.indexOf(area) + 10; 
+    let n1 = parseInt(n12/10);
+    let n2 = n12 % 10;
+    let i = parseInt(Math.random()*9)
+    for (i)
 
 }
