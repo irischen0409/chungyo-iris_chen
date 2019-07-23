@@ -40,3 +40,17 @@ function phoneid(number){  //手機號碼
     }
     return ret;
 }
+
+function createTWID(){ //產生有效的身分證
+
+}
+function createTWIDByArea(area){ //產生指定地區有效身分證
+
+}
+function createTWIDByGender(gender){ //產生指定性別有效身分證
+
+}
+function createTWIDByAll(area, gender){ //產生指定地區&性別有效身分證
+
+
+}
