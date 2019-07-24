@@ -2,11 +2,14 @@
         <table><tr><td>
         <fieldset>
         <legend align="center">身份證產生器</legend>
-        <table bgcolor="#f0f3f3">
-        <tr align="center"><td><input type="text" name="number" maxlength="10">
-        <tr align="center"><td><input type="radio" name="gender" value="1" checked>男性
-        <input type="radio" name="gender" value="2">女性
-        <select name="address">
+        <table bgcolor="#C9FFC9">
+        <tr align="center"><td><input type="text" name="number" maxlength="10">   
+        <form id ="gender">        
+        <tr align="center"><td><input type="radio" name="gender" value="1" onclick="callgender()" >男性
+        <input type="radio" name="gender" value="2" onclick="callgender()">女性>
+        </form>
+        <select name="address" id="area">
+        <option value=" ">請選擇    
         <option value="A">台北市
         <option value="B">台中市
         <option value="C">基隆市
@@ -34,29 +37,45 @@
         <option value="Y">陽明山
         <option value="Z">連江縣	
         </select>
-        <tr align="center"><td><input type="button" value="產生" onclick="go()">
+        <span id = "result"></span>
+        <tr align="left"><td><input type="button" value="產生" onclick="go()">
         <input type="reset" value="重新">
         
         </table>
         </fieldset>
         </table>
         </form>
-        </center>
         </body>
         </html>
-        
+
         <script>
-        function go(){
+        function callgender(){
+            var radionum = document.getElementById("gender");
+            for(var i=0;i<radionum.length;i++){
+               if(radionum[i].checked){
+                   gender= radionum[i].value
+               }
+            }   
+        }            
+        function go() {
+                let a = document.getElementById("area").value
+                createTWIDByAll(a);
+                //document.write(a);
+        }
+        </script>
+        
+        <script>        
+        function createTWIDByAll(area){
         var str="";
         var N=new Array();	
-        N[1]=document.forms[0].address.value;
+        N[1]= area;
         N[0]=N[1];
+        if (N[0] !=" "){
         N[2]=2;
         if(document.forms[0].gender[0].checked)
         N[2]=1;
         while(1){
-        for(var i=3;i<=10;i++){
-        //N[i]=Math.floor(Math.random()*10);	
+        for(var i=3;i<=10;i++){	
         N[i]=parseInt(Math.random()*10);
         }
         switch(N[0]){
@@ -90,12 +109,15 @@
         var count=N[0]+N[2]*8+N[3]*7+N[4]*6+N[5]*5+N[6]*4+N[7]*3+N[8]*2+parseInt(N[9])+parseInt(N[10]);
         if(count%10==0){
         for(var j=1;j<=10;j++){
-        str+=String(N[j]);	
+        str+=String(N[j]);
         }
         break;
         }	
         }
         document.forms[0].number.value=str;
+        }else{
+                
+        }
         }
 
         </script>

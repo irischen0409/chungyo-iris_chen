@@ -1,0 +1,16 @@
+<form id ="gender" >     
+                <tr align="center"><td><input type="radio" name="gender" value="1" onclick="callgender()" checked>男性
+                <input type="radio" name="gender" value="2" onclick="callgender()">女性
+                </form>
+    <script>
+        function callgender(){
+            var radionum = document.getElementById("gender");
+            for(var i=0;i<radionum.length;i++){
+            if(radionum[i].checked){
+                gender= radionum[i].value
+                
+            }
+        }
+        document.write(gender);
+        }   
+    </script>

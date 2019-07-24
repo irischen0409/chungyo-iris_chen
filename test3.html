@@ -1,0 +1,27 @@
+<script>
+function checkPrime(n){
+var isPrim = true;
+for(var i=2;i<n;i++){
+if(n % i == 0){
+isPrim = false;
+break;
+}
+}
+return isPrim;
+}
+function doThing(){
+var n = document.getElementById('number').value;    
+var isPrim=checkPrime(n);
+if(isPrim == true){
+    document.getElementById("result").innerHTML = n+ "是質數"
+}
+else{
+    document.getElementById("result").innerHTML = n+ "不是質數"
+}
+}
+</script>
+
+Number: <input type = "number" id = "number">
+<input type="button" value = "是否為質數" onclick = "doThing()"/>
+<span id = "result"></span>
+

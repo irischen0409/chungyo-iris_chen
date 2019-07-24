@@ -1,0 +1,48 @@
+<script>
+        function checkPrime(n){
+        var isPrim = true;
+        for(var i=2;i<n;i++){
+        if(n % i == 0){
+        isPrim = false;
+        break;
+        }
+        }
+        return isPrim;
+        }
+        function doThing(){
+        var n = document.getElementById('number').value;    
+        var isPrim=checkPrime(n);
+        if(isPrim == true){
+            document.getElementById("result").innerHTML = n+ "是質數"
+        }
+        else{
+            document.getElementById("result").innerHTML = n+ "不是質數"
+        }
+        }
+</script>
+<table border = "1" width = "100%">
+        
+        <script>
+            const ROW = 10; //行
+            const START = 1; //開始
+            const COL = 10; //列
+    
+            for (let k = 0 ; k < ROW ; k++){
+               document.write("<tr>");
+               for (let j=START ; j<=COL ; j++){
+                   let newj = j + k * COL 
+                   
+                   let isPink=checkPrime(newj);
+    
+                   document.write("<td bgcolor ='" + (isPink?"pink":"yellow") + "'>");
+                   document.write(`${newj}`)
+                   document.write("</td>");
+               }
+               document.write("<tr>");
+            }
+        </script>   
+</table>
+<br>
+Number: <input type = "number" id = "number">
+<input type="button" value = "是否為質數" onclick = "doThing()"/>
+<span id = "result"></span>    
