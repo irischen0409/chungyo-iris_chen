@@ -49,18 +49,18 @@
                 </html>
 
         <script>
-        //function getgender(){
-               // let a = document.getElementById("area").value;
-                //  讀取radio的值
-                //var form = document.getElementById("gender1");
-                //for(var i=0; i<form.gender.length;i++){
-                        //if(form.gender[i].checked){
-                           // var gender = form.gender[i].value;
-                            //document.write(gender);
-                       // }
-               // }
-                //createTWIDByAll(a);
-       // }            
+        function getgender(){
+                let a = document.getElementById("area").value;
+                  讀取radio的值
+                var form = document.getElementById("gender1");
+                for(var i=0; i<form.gender.length;i++){
+                        if(form.gender[i].checked){
+                            var gender = form.gender[i].value;
+                            document.write(gender);
+                        }
+                }
+                createTWIDByAll(a);
+        }            
        function go() {
                 let a = document.getElementById("area").value
                 createTWIDByAll(a);
