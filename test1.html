@@ -4,7 +4,7 @@
                 <legend align="center">身份證產生器</legend>
                 <table bgcolor="#C9FFC9">
                 <tr align="center"><td><input type="text" name="number" maxlength="10">   
-                <form id ="gender">        
+                <form id ="gender1">        
                 <tr align="center"><td><input type="radio" name="gender" value="1" >男性
                 <input type="radio" name="gender" value="2" >女性
                 </form>
@@ -56,7 +56,7 @@
                 for(var i=0; i<form.gender.length;i++){
                         if(form.gender[i].checked){
                             var gender = form.gender[i].value;
-                            document.write(gender);
+                            //document.write(gender);
                         }
                 }
                 createTWIDByAll(a);
@@ -82,10 +82,8 @@
               let r = parseInt(Math.random()*25);
               let a = p[r];
               casearea(a);
-
         }
         }
-
 </script>
 <script>
    function casearea(a){
