@@ -1,0 +1,64 @@
+<div>
+        <form name="form_name" id="gender1">
+            <!--radio用法-->
+            <input type="radio" name="gender" value="1" >男性
+            <input type="radio" name="gender" value="2" >女性
+            <br>
+            <!--select用法-->
+    
+            <select name="country">
+                <option value="台灣">台灣</option>
+                <option value="韓國">韓國</option>
+                <option value="日本">日本</option>
+            </select>
+            <button onclick="getCountry()">取得Radio和Select</button>
+        </form>
+    </div>
+    <div id="screen">
+    </div>
+        <input type="text" id="input">
+        <button onclick="WriteOnScreen()">寫入內容到DIV中</button>
+        <button onclick="WriteValue()">寫入內容到INPUT中</button>
+        <button onclick="ShowOnScreen()">讀取DIV的內容</button>
+        <button onclick="ShowValue()">讀取Input的內容</button>  
+
+        <script>
+                function getCountry(){
+                //  讀取radio的值
+                var form = document.getElementById("gender1");
+                for(var i=0; i<form.gender.length;i++){
+                        if(form.gender[i].checked){
+                            var gender = form.gender[i].value;
+                            document.write(gender);
+                        }
+                } 
+                    //  讀取select的值
+                    var country = form.country.value;
+                    alert(country);
+                }
+        //  寫入內容到HTML元素中
+                //  寫入內容到INPUT
+                function WriteValue(){                              
+                    document.getElementById("input").value="12345";
+                }
+                //  寫入內容到DIV或SPAN
+                function WriteOnScreen(){                             
+                    document.getElementById("screen").innerHTML = "2+3"
+                }
+        
+        //  讀取HTML元素
+                 //讀取INPUT的內容
+                function ShowValue(){                               
+                    var v = document.getElementById("input").value ;
+                    alert(v);
+                }
+                 //讀取DIV或SPAN的內容
+                function ShowOnScreen(){                            
+                    var v = document.getElementById("screen")
+                    alert(v.innerHTML);
+                }
+            </script>
+             
+
+
+ 
