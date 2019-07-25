@@ -2,6 +2,8 @@
 <script src="irisutils.js"></script>
 <script>
    let d = 3;
+   //let d = document.getElementById("d").value;
+   //document.write(d);
    let answer = createAnsewr(d);
    console.log(answer);
    let logtext = '';
@@ -39,5 +41,11 @@
 <input type="number" id='input'/>
 <input type="button" value="Guess" onclick="doGuess()" />
 <input type="button" value="replay" onclick="replay()" />
+<select id="d">
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+<span id = "result"></span>
 <hr>
 <div id="log"></div>   
