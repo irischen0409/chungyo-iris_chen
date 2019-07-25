@@ -1,0 +1,55 @@
+<!--畫布功能-->
+
+<h1 id='head'></h1>
+<hr>
+<input type="button" value="Clear" onclick="clearCanvas()" />
+<input type="button" value=" <= " onclick="moveLeft()" />
+<input type="button" value=" => " onclick="moveRight()" />
+<hr>
+<canvas id="canvas" width="480" height="320"
+style="border: 1px solid black" ></canvas>
+<script>
+   head.innerHTML = "CY Big Company";
+   let ctx = canvas.getContext('2d');   //渲染
+   let isDrag;
+
+   ctx.strokeStyle = 'rgb(46,139,87)';  //選擇顏色
+
+   canvas.onmousedown = function(e){
+        isDrag = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX,e.offsetY);
+    }
+    canvas.onmouseup = function(){
+        isDrag = false;
+    }
+    canvas.onmousemove = function(e){
+        if (!isDrag) return;
+        ctx.lineTo(e.offsetX,e.offsetY);
+        ctx.stroke();
+        //console.log("drag:" + e.offsetX + "x" + e.offsetY);
+    }
+
+    let ball = new Image();
+    let ballX = 200;
+    ball.src = 'ball.png';
+    ball.onload = function(){
+        ctx.drawImage(ball, 200,150);
+    }
+
+    function moveLeft(){
+        ballX -= 8;
+        clearCanvas()
+        ctx.drawImage(ball, ballX,150);
+    }
+
+    function moveRight(){
+        ballX += 8;
+        clearCanvas()
+        ctx.drawImage(ball, ballX,150);
+    }
+
+    function clearCanvas(){
+        ctx.clearRect(0 ,0 , 480 , 320);
+    }
+</script>
