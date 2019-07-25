@@ -1,0 +1,19 @@
+<script>
+let a = [];
+a['name'] = 'Brad';
+a['age'] = 18;
+document.write(a['name'] + ":" + a['age'] + "<br>");
+a.push(123);a.push(12.3);a.push('CY');
+for (let key in a){
+    document.write(key + "=>" + a[key] + "<br>");
+}
+
+document.write("<hr>");
+a['eat'] = function(){  //吃東西的方法
+    document.write(this.name + " eat something.<hr>");
+}
+
+a.eat();  //Brad eat something
+
+
+</script>

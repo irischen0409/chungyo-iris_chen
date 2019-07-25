@@ -1,0 +1,54 @@
+<!--物件導向-->
+<script>
+//方法一:
+let bike = new Object();
+document.write(typeof bike + "<br>");
+bike.speed = 0;   //該bike.的成員
+bike.gear = 1;    //bike 檔位
+bike.upSpeed = function(){
+    this.speed = this.speed < 1 ? 1 : this.speed*this.gear*1.2;
+}
+bike.downSpeed = function(){
+    this.speed = this.speed < 1 ? 0 : this.speed*0.7;
+}
+
+bike.upSpeed();bike.upSpeed();bike.upSpeed();bike.upSpeed();
+bike.downSpeed();
+document.write(bike.speed + "<hr>");
+
+//方法二:
+
+let bike2 = {
+    speed : 0,
+    gear : 1,   //檔位
+    upSpeed : function(){
+        this.speed = this.speed < 1 ? 1 : this.speed*this.gear*1.2;
+    },
+    downSpeed : function(){
+        this.speed = this.speed < 1 ? 0 : this.speed*0.7;
+    }
+
+};
+
+document.write(bike2.speed + "<br>");
+bike2.upSpeed();bike2.upSpeed();
+document.write(bike2.speed + "<br>");
+//方法二-1:
+bike2['upSpeed']();
+document.write(bike2.speed + "<br>");
+//方法二-2:
+let method = 'upSpeed';
+bike2[method]();
+document.write(bike2.speed + "<hr>");
+
+for (let key in bike2){
+    document.write(key + "=>" + bike2[key] + "<br>");
+}
+document.write("<hr>");
+
+//內建物件
+
+for (let key2 in window){
+    document.write(key2 + "=>" + window[key2] + "<br>");
+}
+</script>
