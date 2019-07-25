@@ -1,0 +1,43 @@
+<!--猜數字遊戲-->
+<script src="irisutils.js"></script>
+<script>
+   let d = 3;
+   let answer = createAnsewr(d);
+   console.log(answer);
+   let logtext = '';
+   let times = 0;
+   function doGuess(){
+       times++;
+       let guess = document.getElementById('input').value;
+       let result = checkAB(answer,guess);
+       document.getElementById('log').innerHTML = result;
+       
+       alert(`${guess} => ${result}`);
+       logtext += `第${times}次: ${guess} => ${result}<br>`;
+       document.getElementById('log').innerHTML = logtext;
+       document.getElementById('input').value = '';
+       if (result == `${d}A0B`){
+           alert('恭喜老爺!賀喜夫人!!正確答案~');
+           replay();
+       }else if(times == 3){
+           alert(`Loser: ${answer}`);
+           replay();
+       }     
+       document.getElementById('input').focus();
+   }
+
+   function replay(){
+       answer = createAnsewr(d); 
+       logtext = '';
+       times = 0;
+       document.getElementById('log').innerHTML = '';
+       document.getElementById('input').focus();
+   }
+</script>
+<h1>Guess Number Game</h1>
+<hr>
+<input type="number" id='input'/>
+<input type="button" value="Guess" onclick="doGuess()" />
+<input type="button" value="replay" onclick="replay()" />
+<hr>
+<div id="log"></div>   

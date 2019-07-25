@@ -41,22 +41,43 @@ function phoneid(number){  //手機號碼
     return ret;
 }
 
-function createTWID(){ //產生有效的身分證    
+//function createTWID(){ //產生有效的身分證    
 
+//}
+//function createTWIDByArea(area){ //產生指定地區有效身分證
+
+//}
+//function createTWIDByGender(gender){ //產生指定性別有效身分證
+
+//}
+//function createTWIDByAll(area, gender){ //產生指定地區&性別有效身分證
+
+//}
+
+function createAnsewr(n = 3){
+    let poker = [];
+    for (let i = 0; i<10; i++) poker [i] = i;
+    for (let i = poker.length-1; i>0; i--){
+        let rand = parseInt(Math.random() * (i+1));
+        // poker[i] <=> poker[rand] 做交換
+        [poker[i],poker[rand]] = [poker[rand],poker[i]];
+    }
+    let ret = '';
+    for (let i =0; i<n; i++){
+        ret += poker[i]
+    }
+    return ret;
 }
-function createTWIDByArea(area){ //產生指定地區有效身分證
 
-}
-function createTWIDByGender(gender){ //產生指定性別有效身分證
 
-}
-function createTWIDByAll(area, gender){ //產生指定地區&性別有效身分證
-    let twid;
-    let letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO'
-    let n12 = letters.indexOf(area) + 10; 
-    let n1 = parseInt(n12/10);
-    let n2 = n12 % 10;
-    let i = parseInt(Math.random()*9)
-    for (i)
-
+function checkAB(ans,gus){
+    let a = 0, b = 0;
+    for (let i = 0; i<gus.length; i++){
+        if (gus.charAt(i) == ans.charAt(i)){
+            a++;
+        }else if (ans.indexOf(gus.charAt(i)) >= 0){
+            b++;
+        }
+    }
+    return `${a}A${b}B`;
 }
