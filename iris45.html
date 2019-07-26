@@ -1,0 +1,17 @@
+<script>
+let f = function(){ //初始化
+    this.a = 1;
+    this.b = 2;
+}
+
+let obj = new f();  
+document.write(typeof obj + "<br>");
+document.write(obj.a + ":" + obj.b + "<br>");
+
+f.prototype.b = 3;
+f.prototype.c = 4;   //多增加屬性c
+document.write(obj.a + "<br>");
+document.write(obj.b + "<br>");
+document.write(obj.c + "<br>");
+
+</script>

@@ -1,0 +1,93 @@
+<script src="irisutils.js"></script>
+<h1 id='head'></h1>
+<hr>
+<canvas id="canvas" width="480" height="320"
+style="border: 1px solid black" ></canvas>
+<script>
+   head.innerHTML = "CY Big Company2";
+   let ctx = canvas.getContext('2d');   //渲染
+   let bg = new Image();
+   bg.src = 'bg.jpg';
+   let ball = new Image();
+   let ball2 = new Image();
+   let ball3 = new Image();
+   ball.src = 'ball.png';
+   ball2.src = 'ball2.png';
+   ball3.src = 'ball3.png';
+   let ballImg = [ball,ball2,ball3];
+   let balls = [];
+   let ballObj = {
+       x : 0,
+       y : 0,
+       dx : 8,
+       dy : 8,
+       img : 0
+   };
+
+   //let ballX = 0;
+   //let ballY = 0;
+
+   //let dx =8 , dy =8;
+
+   ball.onload = function(){
+       ctx.drawImage(bg, 0, 0);
+    }
+
+   canvas.onmousedown = function(event){
+        //ctx.drawImage(ball, event.offsetX-24,event.offsetY-24);
+        //ballX = event.offsetX-24;
+        //ballY = event.offsetY-24; 
+        let ball = clone(ballObj);
+
+        ball.x = event.offsetX - 24;
+        ball.y = event.offsetY - 24;
+
+        ball.dx = parseInt(Math.random()*17 - 8);
+        ball.dy = parseInt(Math.random()*17 - 8);
+
+        ball.img = parseInt(Math.random()*ballImg.length);
+        balls.push(ball);
+   }     
+   
+   function refreshView(){
+       ctx.clearRect(0,0,canvas.width,canvas.height); //先清空背景
+       ctx.drawImage(bg, 0, 0); 
+       //ctx.drawImage(ball, ballX,ballY);
+
+       for (let ball of balls){
+           ctx.drawImage(ballImg[ball.img], ball.x, ball.y);
+       }
+   }
+   setInterval(refreshView,17); //每秒幾針 刷新上去
+
+   //function moveBall(){
+       //if (ballX < 0 || ballX + 48 > canvas.width){
+           //dx *= -1;
+       //}
+       //if (ballY < 0 || ballY + 48 > canvas.height){
+           //dy *= -1;           
+       //}       
+       //ballX += dx;
+       //ballY += dy;
+   //}
+   //setInterval(moveBall, 30); //球在移動的最小速度
+
+   function moveBall(obj){
+       if (obj.x < 0 || obj.x + 48 > canvas.width){
+           obj.dx *= -1;
+       }
+       if (obj.y < 0 || obj.y + 48 > canvas.height){
+           obj.dy *= -1;           
+       }        
+       obj.x += obj.dx; obj.y += obj.dy;
+   }
+
+   function go(){  //多少顆 就那些球能動
+       for (let ball of balls){
+           moveBall(ball);
+       }
+
+   }
+   setInterval(go, 30);
+
+</Script>
