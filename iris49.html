@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<script src="irisutils.js"></script>
+<script>
+setInterval(() => {
+    let clock = new Date();
+    //let clockString = clock.getFullYear() + "-" +
+    let clockString = "民國" + clock.getTWYear() + "-" +
+        (clock.getMonth()+1) + "-" + clock.getDate() + " " + clock.getHours() + ":" +
+        clock.getMinutes() + ":" + clock.getSeconds() + " " + "(" + clock.getCWeek() + ")";
+    now.innerHTML = clockString;
+}, 1*1000);
+</script>
+目前日期時間: <span id='now'></span>

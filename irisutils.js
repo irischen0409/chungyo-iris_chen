@@ -95,3 +95,13 @@ function clone(source){
     }
     return target;     
 }
+
+Date.prototype.getTWYear = function(){
+    return this.getFullYear() - 1911;
+}
+
+Date.prototype.getCWeek = function(){
+    let w = this.getDay();
+    let ws = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    return ws[w];
+}
